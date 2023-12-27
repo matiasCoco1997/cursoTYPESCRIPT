@@ -2,7 +2,13 @@ import { useState } from "react"
 
 export const TodoApp = () => {
 
-    const [nuevaTarea, setNewTarea] = useState('');
+    const [nuevaTarea, setNuevaTarea] = useState<string>('');
+
+    const [listaTareas, setListaTarea] = useState<string[]>([]);
+
+    const hanleAddTask = () => {
+
+    }
 
     return (
         <div>
@@ -11,10 +17,11 @@ export const TodoApp = () => {
             <div>
                 <input type="text" 
                     value={nuevaTarea} 
-                    onChange={(e) => setNewTarea (e.target.value)} 
+                    onChange={(e) => setNuevaTarea (e.target.value)} 
                     placeholder="Nueva Tarea"
                 />
 
+                <button onClick={hanleAddTask}></button>
             </div>  
         </div>
     )
